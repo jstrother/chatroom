@@ -1,8 +1,6 @@
-const $ = require('jquery');
-
 $(document).ready(function() {
 	var input = $('input');
-	var messages = $('messages');
+	var messages = $('#messages');
 
 	var addMessge = function(message) {
 		messages.append('<div>' + message + '</div>');
