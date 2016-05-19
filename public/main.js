@@ -1,18 +1,23 @@
 $(document).ready(function() {
-	var input = $('input');
-	var messages = $('#messages');
-
-	var addMessge = function(message) {
-		messages.append('<div>' + message + '</div>');
-	};
+	const socket = io();
+	const input = $('input');
+	const messages = $('#messages');
 
 	input.on('keydown', function(event) {
+		const message = input.val();
+
 		if (event.keyCode != 13) {
 			return;
 		}
 
-		var message = input.val();
 		addMessge(message);
+		socket.emit('message', message);
 		input.val('');
 	});
+
+	socket.on('message', addMessge);
+
+	function addMessge(message) {
+		messages.append('<div>' + message + '</div>');
+	};
 });
