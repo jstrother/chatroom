@@ -5,8 +5,8 @@ const http = require('http');
 const app = express();
 app.use(express.static('public'));
 
-var server = http.Server(app);
-var io = socket(server);
+const server = http.Server(app);
+const io = socket(server);
 
 io.on('connection', function(socket) {
 	console.log('Client connected');
