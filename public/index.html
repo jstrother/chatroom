@@ -3,14 +3,29 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Chatroom</title>
+	<style>
+		.hidden {
+			display: none;
+		}
+	</style>
 </head>
 <body>
-	<input type="text">
+	<div id="nameDiv">
+		<label for="name">Enter your name: </label>
+		<input type="text" id="name">
+	</div>
+		
+	<div id="messageDiv" class="hidden">
+		<label for="message">Type Your Message: </label>
+		<input type="text" id="message">
+	</div>
+	<br><br>
+
 	<div id="messages"></div>
 	
 	<!-- JS -->
 	<script src="/socket.io/socket.io.js"></script>
-	<script src="//code.jquery.com/jquery-2.1.0.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<script src="main.js"></script>
 </body>
 </html>
