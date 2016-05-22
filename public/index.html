@@ -15,17 +15,22 @@
 		<input type="text" id="name">
 	</div>
 		
-	<div id="messageDiv" class="hidden">
-		<label for="message">Type Your Message: </label>
-		<input type="text" id="message">
+	<div id="textDiv" class="hidden">
+		<label for="text">Type Your Message: </label>
+		<input type="text" id="text">
 	</div>
+	<br>
+	<label for="leaveButton"></label>
+	<button id="leaveButton">Leave Conversation</button>
 	<br><br>
 
+	<div id="users"></div>
+	<br><hr><br>
 	<div id="messages"></div>
 	
 	<!-- JS -->
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-	<script src="main.js"></script>
+	<script src="scripts.js"></script>
 </body>
 </html>

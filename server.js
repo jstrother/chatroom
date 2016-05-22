@@ -19,7 +19,12 @@ io.on('connection', function(socket) {
 	socket.on('user', function(user) {
 		console.log('User connected:', user);
 		socket.broadcast.emit('user', user);
-	})
+	});
+
+	socket.on('leave', function(left) {
+		console.log(left);
+		socket.broadcast.emit('leave', left);
+	});
 });
 
 server.listen(8080);
